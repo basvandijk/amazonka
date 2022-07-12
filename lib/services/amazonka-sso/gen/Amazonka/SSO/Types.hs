@@ -59,6 +59,7 @@ defaultService =
   Core.Service
     { Core._serviceAbbrev = "SSO",
       Core._serviceSigner = Sign.v4,
+      Core._serviceRewriteS3VHost = Prelude.False,
       Core._serviceEndpointPrefix = "portal.sso",
       Core._serviceSigningName = "awsssoportal",
       Core._serviceVersion = "2019-06-10",

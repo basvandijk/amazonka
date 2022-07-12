@@ -66,6 +66,7 @@ defaultService =
   Core.Service
     { Core._serviceAbbrev = "STS",
       Core._serviceSigner = Sign.v4,
+      Core._serviceRewriteS3VHost = Prelude.False,
       Core._serviceEndpointPrefix = "sts",
       Core._serviceSigningName = "sts",
       Core._serviceVersion = "2011-06-15",

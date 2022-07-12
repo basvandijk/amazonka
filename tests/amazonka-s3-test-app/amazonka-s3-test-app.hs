@@ -19,7 +19,10 @@ main = do
   defEnv <- Amazonka.newEnv Amazonka.Auth.fromKeysEnv
   let Just endpoint = parseEndpoint endpointStr
 
-      env = Amazonka.override (Amazonka.serviceEndpoint .~ endpoint) defEnv
+      env =
+        flip Amazonka.override defEnv $
+          (Amazonka.serviceEndpoint .~ endpoint)
+            . (Amazonka.serviceRewriteS3VHost .~ False)
 
       bucketName :: S3.BucketName
       bucketName = fromString bucketNameStr

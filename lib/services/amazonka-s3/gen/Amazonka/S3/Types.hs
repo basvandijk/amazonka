@@ -1214,6 +1214,7 @@ defaultService =
   Core.Service
     { Core._serviceAbbrev = "S3",
       Core._serviceSigner = Sign.v4,
+      Core._serviceRewriteS3VHost = Prelude.True,
       Core._serviceEndpointPrefix = "s3",
       Core._serviceSigningName = "s3",
       Core._serviceVersion = "2006-03-01",
